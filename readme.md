@@ -5,7 +5,7 @@ to a bbox to limit the number of features that can be returned in a single query
 
 ## Example route
 
-To test out some example routes, try the following:
+To test out some example routes, try the following.
 
 Should return some geojson data:
 
