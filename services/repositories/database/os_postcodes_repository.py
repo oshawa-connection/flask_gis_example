@@ -8,7 +8,16 @@ from models.extent import Extent
 OS_POSTCODE_REPOSITORY_KEY = "os_postcode_repository"
 
 class OSPostcodesRepository:
+    '''
+    The service that performs the SQL queries. This could be made into an ABC
+    but I feel that would be "too C#" and we should instead rely on duck typing.
+    During testing, we just mock this service out.
+    '''
     def get_within_extent(self,extent:Extent):
+        '''
+        Selects all os postcodes within the specified extent.
+        '''
+        
         result = self._db.session.execute('''
         SELECT json_build_object(
             'type', 'FeatureCollection',

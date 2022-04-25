@@ -10,7 +10,6 @@ from flask_sqlalchemy import SQLAlchemy
 import psycopg2
 from configuration.debug_configuation import DebugConfiguration
 
-from resources.hello_resource import HelloWorld
 from resources.os_postcodes_resource import OSPostcodes
 from services.repositories.database.os_postcodes_repository import OS_POSTCODE_REPOSITORY_KEY, OSPostcodesRepository
 

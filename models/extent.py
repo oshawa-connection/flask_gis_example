@@ -1,6 +1,7 @@
 class Extent:
     '''
-    Used to store minX, minY of bbox for queries, and to check their extent is not too large
+    Used to store minX, minY of bbox for queries, and to check their extent is not too large, 
+    bbox is valid etc
     '''
     
     def calculate_area(self):
