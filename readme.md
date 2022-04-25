@@ -9,19 +9,19 @@ To test out some example routes, try the following.
 
 Should return some geojson data:
 
-[http://localhost:5000/api/ospostcodes?extent=-358183.914544,7544263.629197,-355305.209470,7548213.870932]
+[http://localhost:5000/api/ospostcodes?extent=-358183.914544,7544263.629197,-355305.209470,7548213.870932](http://localhost:5000/api/ospostcodes?extent=-358183.914544,7544263.629197,-355305.209470,7548213.870932)
 
 Should return "Extent was too large" because it is a large requested area:
 
-[http://localhost:5000/api/ospostcodes?extent=-355305.209470,0,0,7548213.870932]
+[http://localhost:5000/api/ospostcodes?extent=-355305.209470,0,0,7548213.870932](http://localhost:5000/api/ospostcodes?extent=-355305.209470,0,0,7548213.870932)
 
 If you flip the coordinates, it will also return an error:
 
-[http://localhost:5000/api/ospostcodes?extent=10,10,0,0]
+[http://localhost:5000/api/ospostcodes?extent=10,10,0,0](http://localhost:5000/api/ospostcodes?extent=10,10,0,0)
 
 # Running for development
 
-Download the [postcodes]https://osdatahub.os.uk/downloads/open/CodePointOpen dataset, load them into a POSTGIS table
+Download the [postcodes](https://osdatahub.os.uk/downloads/open/CodePointOpen) dataset, load them into a POSTGIS table
 
 Schema name: os_data
 
@@ -33,7 +33,7 @@ docker build -t gis_flask_example .
 docker run -dp 5000:5000 -e DATABASE_URL="postgresql://host.docker.internal/DATABASE_NAME?user=USER_NAME&password=PASSWORD" gis_flask_example
 ```
 
-If you go to [http://localhost:5000/healthcheck] you should get a `Healthy` result if the app can connect to the database all ok.
+If you go to [http://localhost:5000/healthcheck](http://localhost:5000/healthcheck) you should get a `Healthy` result if the app can connect to the database all ok.
 
 ## Configuration
 
