@@ -11,7 +11,7 @@ from dataclasses import dataclass
 @dataclass
 class BaseConfiguration(ABC):
     '''
-    hello owrld
+    A collection of settings to be inherited by all other configurations.
     '''
 
     _db_env_var_key = "DATABASE_URL"

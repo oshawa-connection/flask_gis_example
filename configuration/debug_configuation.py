@@ -7,7 +7,7 @@ from dataclasses import dataclass
 @dataclass
 class DebugConfiguration(BaseConfiguration):
     '''
-    Configuration for debugging app, the default.
+    Configuration for debugging app during development
     '''
     DEBUG = True
 

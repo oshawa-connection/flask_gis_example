@@ -10,7 +10,6 @@ class Extent:
         return (self.max_x - self.min_x) * (self.max_y - self.min_y)
 
     def exceeds_area(self,size_limit:float):
-        print(f"Area was determined to be {self.calculate_area()}")
         return size_limit < self.calculate_area()
 
     @staticmethod
@@ -21,9 +20,17 @@ class Extent:
         
         return Extent(float(split_string[0]),float(split_string[1]),float(split_string[2]),float(split_string[3]))
 
+    def get_sql_params(self):
+        return {'min_x':self.min_x,'min_y':self.min_y,'max_x':self.max_x,'max_y':self.max_y}
+
     def __init__(self,min_x:float,min_y:float,max_x:float,max_y:float):
         self.min_x = min_x
         self.min_y = min_y
         self.max_x = max_x
         self.max_y = max_y
+
+        if (max_x < min_x):
+            raise ValueError(f"max_x of {self.max_x} was less than the min_x of {self.min_x}")
+        if (max_y < min_y):
+            raise ValueError(f"max_y of {self.max_y} was less than the min_y of {self.min_y}")
         

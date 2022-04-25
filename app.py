@@ -52,4 +52,5 @@ os_postcode_repository = OSPostcodesRepository(DATABASE)
 API.add_resource(OSPostcodes, '/api/ospostcodes',resource_class_kwargs={ OS_POSTCODE_REPOSITORY_KEY:os_postcode_repository })
 
 if __name__ == '__main__':
-    APP.run()
+    # In reality, I wouldn't do this!
+    APP.run('0.0.0.0',5000)

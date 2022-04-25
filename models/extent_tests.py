@@ -1,17 +1,8 @@
 import unittest
-
 from extent import Extent
 
 
 class TestExtent(unittest.TestCase):
-    def test_list_int(self):
-        """
-        Test that it can sum a list of integers
-        """
-        data = [1, 2, 3]
-        result = sum(data)
-        self.assertEqual(result, 6)
-
     def test_can_parse(self):
         '''
         Test that it can be read correctly from a bbox string from the controller
@@ -56,6 +47,10 @@ class TestExtent(unittest.TestCase):
     def test_determines_size_ok(self):
         extent_too_big = Extent(0,0,10,10)
         self.assertFalse(extent_too_big.exceeds_area(100))
+
+    def throws_on_invalid_bbox(self):
+        with self.assertRaises(ValueError):
+            extent = Extent(10,10,0,0)
 
 if __name__ == '__main__':
     unittest.main()
